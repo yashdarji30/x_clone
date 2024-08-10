@@ -6,6 +6,7 @@ import SignUpPage from "./pages/auth/signup/SignUpPage";
 import NotificationPage from "./pages/notification/NotificationPage";
 import ProfilePage from "./pages/profile/ProfilePage";
 
+// import Sidebar from "./components/common/Sidebar";
 import Sidebar from "./components/common/Sidebar";
 import RightPanel from "./components/common/RightPanel";
 

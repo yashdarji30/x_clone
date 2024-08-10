@@ -10,7 +10,6 @@ const CreatePost = () => {
 	const [img, setImg] = useState(null);
 	const imgRef = useRef(null);
 
-	//create post function addess
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 	const queryClient = useQueryClient();
 
@@ -108,4 +107,4 @@ const CreatePost = () => {
 		</div>
 	);
 };
-export default CreatePost; 
+export default CreatePost;

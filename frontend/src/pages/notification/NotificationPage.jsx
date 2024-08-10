@@ -12,6 +12,8 @@ const NotificationPage = () => {
 	const queryClient = useQueryClient();
 	const { data: notifications, isLoading } = useQuery({
 		queryKey: ["notifications"],
+		
+		// we use queryKey to give a unique name to our query and refer to it later
 		queryFn: async () => {
 			try {
 				const res = await fetch("/api/notifications");

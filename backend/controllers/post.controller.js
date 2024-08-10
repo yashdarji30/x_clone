@@ -7,6 +7,7 @@ export const createPost = async (req, res) => {
 	try {
 		const { text } = req.body;
 		let { img } = req.body;
+		// console.log(img);
 		const userId = req.user._id.toString();
 
 		const user = await User.findById(userId);
@@ -19,6 +20,7 @@ export const createPost = async (req, res) => {
 		if (img) {
 			const uploadedResponse = await cloudinary.uploader.upload(img);
 			img = uploadedResponse.secure_url;
+			console.log(uploadedResponse);
 		}
 
 		const newPost = new Post({
@@ -29,11 +31,12 @@ export const createPost = async (req, res) => {
 
 		await newPost.save();
 		res.status(201).json(newPost);
-	} catch (error) {
-		res.status(500).json({ error: "Internal server error" });
-		console.log("Error in createPost controller: ", error);
-	}
-};
+	} 
+catch (error) {
+	res.status(500).json({ error: "Internal server error" });
+	console.log("Error in createPost controller: ", error);
+}}
+;
 
 export const deletePost = async (req, res) => {
 	try {
@@ -226,3 +229,4 @@ export const getUserPosts = async (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 };
+
